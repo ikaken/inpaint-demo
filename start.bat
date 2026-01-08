@@ -6,8 +6,11 @@ echo ========================================
 echo.
 
 REM venvを使用
-if exist ".venv\Scripts\activate.bat" (
-    echo [INFO] venv環境を使用します（LaMa対応）
+if exist ".venv312\Scripts\activate.bat" (
+    echo [INFO] Python 3.12 venv環境を使用します（LaMa対応）
+    call .venv312\Scripts\activate.bat
+) else if exist ".venv\Scripts\activate.bat" (
+    echo [INFO] venv環境を使用します
     call .venv\Scripts\activate.bat
 ) else (
     echo [INFO] システムPythonを使用します

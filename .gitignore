@@ -5,8 +5,11 @@ __pycache__/
 *.so
 .Python
 .venv/
+.venv312/
 venv/
+venv312/
 ENV/
+ENV312/
 
 # PyTorch models (large files)
 *.pt
