@@ -31,11 +31,30 @@ pip install -r requirements.txt
 
 ### LaMa (ローカルAI) を使用する場合
 
+**重要:** Anaconda/Miniconda ではなく、[Python公式版](https://www.python.org/downloads/) の使用を推奨します。
+
 ```bash
+# 1. pip を最新化
+pip install --upgrade pip
+
+# 2. PyTorch のインストール（CPU版）
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# 3. LaMa のインストール
 pip install simple-lama-inpainting
 ```
 
 初回実行時にモデル（約200MB）が自動ダウンロードされます。
+
+#### よくあるトラブル
+
+| 症状 | 原因 | 解決策 |
+|------|------|--------|
+| `No module named 'torch'` | PyTorch未インストール | 上記の手順2を実行 |
+| インストールが途中で止まる | ネットワーク問題 | 再試行、またはVPN経由で試す |
+| `ModuleNotFoundError` | Anaconda環境の問題 | Python公式版で仮想環境を作り直す |
+
+> **詳細なトラブルシューティングは [LAMA_INSTALL_GUIDE.md](./LAMA_INSTALL_GUIDE.md) を参照してください。**
 
 ## 起動
 
