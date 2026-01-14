@@ -451,6 +451,10 @@
                     imageCanvas.width = maskCanvas.width = width;
                     imageCanvas.height = maskCanvas.height = height;
 
+                    // コンテナのサイズを設定して表示ズレを修正
+                    canvasWrapper.style.width = width + 'px';
+                    canvasWrapper.style.height = height + 'px';
+
                     // 画像を描画
                     imageCtx.drawImage(img, 0, 0, width, height);
                     currentImage = imageCanvas.toDataURL('image/png');
@@ -688,6 +692,10 @@
                     // キャンバスサイズを設定
                     imageCanvas.width = maskCanvas.width = demoData.width;
                     imageCanvas.height = maskCanvas.height = demoData.height;
+
+                    // コンテナのサイズを設定
+                    canvasWrapper.style.width = demoData.width + 'px';
+                    canvasWrapper.style.height = demoData.height + 'px';
 
                     // 画像を描画
                     imageCtx.drawImage(img, 0, 0);
